@@ -188,19 +188,32 @@ def projects():
     projects_list = [
         {
             "number": "01",
+            "title": "Swim with Shirel",
+            "description": (
+                "A full website for my private swimming lesson business — built and deployed "
+                "independently. Handles scheduling information, availability, and contact. "
+                "Live on Railway with a custom domain."
+            ),
+            "tags": ["Python", "Flask", "HTML", "CSS", "Railway"],
+            "status": "LIVE",
+            "link": "https://swim-with-shirel-production.up.railway.app/",
+            "github": "#",
+        },
+        {
+            "number": "02",
             "title": "Portfolio Website",
             "description": (
                 "This site — designed and built with Flask, HTML, and CSS. A personal brand "
                 "system featuring a dark green tennis-inspired visual language and editorial layout. "
                 "The first real thing I built for myself."
             ),
-            "tags": ["Python", "Flask", "HTML", "CSS"],
+            "tags": ["Python", "Flask", "HTML", "CSS", "Claude Code"],
             "status": "LIVE",
             "link": "#",
-            "github": "#",
+            "github": "https://github.com/shirel2005/portfolio",
         },
         {
-            "number": "02",
+            "number": "03",
             "title": "Formula Electric — Electrical Systems",
             "description": (
                 "Contributing to the electrical systems of McGill Formula Electric's race car. "
@@ -213,7 +226,7 @@ def projects():
             "github": "#",
         },
         {
-            "number": "03",
+            "number": "04",
             "title": "Coming Soon",
             "description": (
                 "A new project is taking shape. This space will be updated as I continue "
@@ -226,7 +239,7 @@ def projects():
             "github": "#",
         },
         {
-            "number": "04",
+            "number": "05",
             "title": "Coming Soon",
             "description": (
                 "More is coming. I am actively building technical depth through classes, "
