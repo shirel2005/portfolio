@@ -1,5 +1,5 @@
 # ══════════════════════════════════════════════════════════════════
-#  app.py — Shirel Dahan Portfolio
+#  app.py, Shirel Dahan Portfolio
 #  Built with Flask (Python web framework)
 #
 #  HOW THIS FILE WORKS:
@@ -17,7 +17,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 app = Flask(__name__)
 
 # Secret key is required for Flask's "flash" message system (form feedback).
-# os.environ.get() reads from environment variables — this is how you keep
+# os.environ.get() reads from environment variables, this is how you keep
 # secrets out of your code. On Render, set SECRET_KEY in the dashboard.
 # The second argument is the fallback used when running locally.
 app.secret_key = os.environ.get("SECRET_KEY", "sd-portfolio-local-dev-only")
@@ -30,20 +30,20 @@ app.secret_key = os.environ.get("SECRET_KEY", "sd-portfolio-local-dev-only")
 
 @app.route("/")
 def index():
-    """Home page — hero section + intro highlights."""
+    """Home page, hero section + intro highlights."""
     return render_template("index.html")
 
 
 @app.route("/about")
 def about():
-    """About page — personal introduction and background."""
+    """About page, personal introduction and background."""
     return render_template("about.html")
 
 
 @app.route("/experience")
 def experience():
     """
-    Experience page — work, education, volunteer, and awards.
+    Experience page, work, education, volunteer, and awards.
 
     Instead of hard-coding data inside the HTML, we define it here as
     Python lists of dictionaries. Then we pass it to the template using
@@ -56,20 +56,20 @@ def experience():
     experiences = [
         {
             "category": "EDUCATION",
-            "date": "2025 — 2029",
+            "date": "2025 to 2029",
             "title": "B.Eng. Software Engineering (Co-op)",
             "organization": "McGill University",
             "location": "Montréal, QC",
             "description": (
                 "Pursuing a co-operative degree in Software Engineering, building strong "
-                "technical foundations across systems, algorithms, and engineering practice — "
+                "technical foundations across systems, algorithms, and engineering practice, "
                 "with real-world industry placements woven throughout."
             ),
         },
         {
             "category": "ENGINEERING",
-            "date": "2025 — Present",
-            "title": "Member — Electrical Division",
+            "date": "2025 to Present",
+            "title": "Member, Electrical Division",
             "organization": "McGill Formula Electric",
             "location": "Montréal, QC",
             "description": (
@@ -81,7 +81,7 @@ def experience():
         },
         {
             "category": "BUILDING",
-            "date": "2025 — Present",
+            "date": "2025 to Present",
             "title": "AI-Assisted Engineering",
             "organization": "Self-Directed Exploration",
             "location": "Montréal, QC",
@@ -94,8 +94,8 @@ def experience():
         },
         {
             "category": "BUILDING",
-            "date": "2025 — Present",
-            "title": "Web Development — HTML, CSS & Flask",
+            "date": "2025 to Present",
+            "title": "Web Development: HTML, CSS and Flask",
             "organization": "Self-Directed Projects",
             "location": "Montréal, QC",
             "description": (
@@ -115,7 +115,7 @@ def experience():
         {
             "title": "Health Science Honours List",
             "year": "2024",
-            "description": "Recognized for academic excellence — the foundation of strong technical work.",
+            "description": "Recognized for academic excellence, the foundation of strong technical work.",
         },
         {
             "title": "Frank Cwilich Prize",
@@ -135,9 +135,9 @@ def experience():
 
 @app.route("/skills")
 def skills():
-    """Skills page — technical abilities, tools, and certifications."""
+    """Skills page, technical abilities, tools, and certifications."""
 
-    # Group skills by category — easy to edit and extend
+    # Group skills by category, easy to edit and extend
     skill_groups = [
         {
             "category": "AI TOOLS",
@@ -183,16 +183,16 @@ def skills():
 
 @app.route("/projects")
 def projects():
-    """Projects page — current builds and placeholders for future work."""
+    """Projects page, current builds and placeholders for future work."""
 
     projects_list = [
         {
             "number": "01",
             "title": "Swim with Shirel",
             "description": (
-                "A full website for my private swimming lesson business — built and deployed "
+                "A full website for my private swimming lesson business, built and deployed "
                 "independently. Handles scheduling information, availability, and contact. "
-                "Live on Railway with a custom domain."
+                "Live on Railway."
             ),
             "tags": ["Python", "Flask", "HTML", "CSS", "Railway"],
             "status": "LIVE",
@@ -203,7 +203,7 @@ def projects():
             "number": "02",
             "title": "Portfolio Website",
             "description": (
-                "This site — designed and built with Flask, HTML, and CSS. A personal brand "
+                "Designed and built with Flask, HTML, and CSS. A personal brand "
                 "system featuring a dark green tennis-inspired visual language and editorial layout. "
                 "The first real thing I built for myself."
             ),
@@ -214,7 +214,7 @@ def projects():
         },
         {
             "number": "03",
-            "title": "Formula Electric — Electrical Systems",
+            "title": "Formula Electric: Electrical Systems",
             "description": (
                 "Contributing to the electrical systems of McGill Formula Electric's race car. "
                 "Working within a multidisciplinary engineering team using version control, "
@@ -259,7 +259,7 @@ def projects():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     """
-    Contact page — displays the form on GET, handles submission on POST.
+    Contact page, displays the form on GET, handles submission on POST.
 
     Flask routes can handle multiple HTTP methods.
     GET = someone visits the page (show the form).
@@ -271,7 +271,7 @@ def contact():
         email = request.form.get("email", "").strip()
         message = request.form.get("message", "").strip()
 
-        # Simple validation — make sure nothing is empty
+        # Simple validation, make sure nothing is empty
         if not name or not email or not message:
             flash("Please fill in all fields.", "error")
         else:
@@ -279,7 +279,7 @@ def contact():
             # For now, we print to the terminal and show a success message.
             print(f"\n📬 New message from {name} ({email}):\n{message}\n")
             flash(
-                f"Thank you, {name}. Your message has been received — I will be in touch.",
+                f"Thank you, {name}. Your message has been received. I will be in touch.",
                 "success",
             )
             # Redirect after POST to prevent duplicate form submissions on refresh

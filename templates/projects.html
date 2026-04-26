@@ -1,11 +1,11 @@
 <!--
-  projects.html — Projects Page
+  projects.html, Projects Page
   Renders project cards from the projects list in app.py.
-  Designed to grow — add new projects in app.py, they appear here automatically.
+  Designed to grow, add new projects in app.py, they appear here automatically.
 -->
 {% extends 'base.html' %}
 
-{% block title %}Projects — Shirel Dahan{% endblock %}
+{% block title %}Projects | Shirel Dahan{% endblock %}
 {% block body_class %}page--projects{% endblock %}
 
 {% block content %}
@@ -26,7 +26,7 @@
 <div class="projects-intro">
   <div class="projects-intro__inner">
     <p class="projects-intro__text">
-      Early days, honest work. This page grows as I build — through coursework,
+      Early days, honest work. This page grows as I build, through coursework,
       team engineering, and the side projects that start at midnight and teach
       you more than any lecture ever could.
     </p>
@@ -45,10 +45,10 @@
     {% for project in projects %}
     <article class="project-card fade-in project-card--{{ project.status | lower | replace(' ', '-') }}">
 
-      <!-- Large background number — faded, structural -->
+      <!-- Large background number, faded, structural -->
       <span class="project-card__num" aria-hidden="true">{{ project.number }}</span>
 
-      <!-- Status badge — LIVE / IN PROGRESS / UPCOMING -->
+      <!-- Status badge, LIVE / IN PROGRESS / UPCOMING -->
       <div class="project-card__header">
         <span class="project-card__status project-card__status--{{ project.status | lower | replace(' ', '-') }}">
           {{ project.status }}

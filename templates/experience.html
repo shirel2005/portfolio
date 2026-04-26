@@ -1,5 +1,5 @@
 {# ─────────────────────────────────────────────────────────────────
-   experience.html — Experience Page
+   experience.html, Experience Page
    Renders work, leadership, volunteer roles, and awards.
    Data comes from the experiences[] and awards[] lists in app.py.
 
@@ -10,7 +10,7 @@
    ───────────────────────────────────────────────────────────────── #}
 {% extends 'base.html' %}
 
-{% block title %}Experience — Shirel Dahan{% endblock %}
+{% block title %}Experience | Shirel Dahan{% endblock %}
 {% block body_class %}page--experience{% endblock %}
 
 {% block content %}
@@ -36,7 +36,7 @@
 <section class="timeline" aria-label="Experience timeline">
   <div class="timeline__inner">
 
-    <!-- Vertical line — the "sideline" -->
+    <!-- Vertical line, the "sideline" -->
     <div class="timeline__line" aria-hidden="true"></div>
 
     {% for exp in experiences %}
@@ -74,7 +74,7 @@
 
 <!-- ══════════════════════════════════════════════════════════════
      AWARDS & RECOGNITION
-     Scorecard-style layout — year left, title + description right.
+     Scorecard-style layout, year left, title + description right.
 ══════════════════════════════════════════════════════════════════ -->
 <section class="awards" aria-label="Awards and recognition">
   <div class="awards__inner">

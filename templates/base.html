@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {# ─────────────────────────────────────────────────────────────────
-   base.html — The shared "skeleton" that all pages inherit.
+   base.html, The shared "skeleton" that all pages inherit.
 
    HOW THIS WORKS:
    Every page template (index.html, about.html, etc.) starts with:
@@ -15,10 +15,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  {# Page title — child templates override this with: block title ... endblock #}
+  {# Page title, child templates override this with: block title ... endblock #}
   <title>{% block title %}Shirel Dahan{% endblock %}</title>
 
-  <meta name="description" content="Shirel Dahan — Software Engineering student at McGill University. Precision-driven. Community-rooted. Engineering what matters." />
+  <meta name="description" content="Shirel Dahan | Software Engineering student at McGill University. Precision-driven. Community-rooted. Engineering what matters." />
 
   <!-- ── Google Fonts ─────────────────────────────────────────────
        Three fonts, three roles:
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Main stylesheet — all visual design lives here -->
+  <!-- Main stylesheet, all visual design lives here -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 
   {% block extra_head %}{% endblock %}
@@ -42,19 +42,19 @@
   <!-- ══════════════════════════════════════════════════════════════
        NAVIGATION
        Fixed at the top. Becomes opaque on scroll (JS handles this).
-       request.endpoint is a Flask variable — it's the name of the
+       request.endpoint is a Flask variable, it's the name of the
        current route function (e.g. "index", "about", "contact").
        We use it to highlight the active nav link.
   ══════════════════════════════════════════════════════════════════ -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
 
-      <!-- Brand monogram — links back to home -->
-      <a href="{{ url_for('index') }}" class="nav__logo" aria-label="Shirel Dahan — Home">
+      <!-- Brand monogram, links back to home -->
+      <a href="{{ url_for('index') }}" class="nav__logo" aria-label="Shirel Dahan | Home">
         <span class="nav__monogram" aria-hidden="true">SD</span>
       </a>
 
-      <!-- Mobile hamburger button — toggled by JavaScript -->
+      <!-- Mobile hamburger button, toggled by JavaScript -->
       <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="nav__toggle-bar"></span>
         <span class="nav__toggle-bar"></span>
@@ -175,7 +175,7 @@
 
   </footer>
 
-  <!-- Minimal JavaScript — only what's truly needed -->
+  <!-- Minimal JavaScript, only what's truly needed -->
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>
